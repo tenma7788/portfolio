@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kenzo@whitehat:~$</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div class="matrix-bg">
+        <canvas id="matrix"></canvas>
+    </div>
+    <div class="hacker-face-bg">
+        <!-- High-contrast Guy Fawkes Mask SVG -->
+        <svg viewBox="0 0 64 64" width="600" height="600" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g opacity="1">
+                <path d="M32 8C18 8 8 20 8 32c0 12 10 24 24 24s24-12 24-24C56 20 46 8 32 8zm0 44c-10.5 0-20-9.5-20-20S21.5 12 32 12s20 9.5 20 20-9.5 20-20 20zm-8-16c0 2.2 3.6 4 8 4s8-1.8 8-4m-16-4c0-2.2 3.6-4 8-4s8 1.8 8 4" stroke="#fff" stroke-width="2"/>
+                <ellipse cx="24" cy="28" rx="2" ry="3" fill="#fff"/>
+                <ellipse cx="40" cy="28" rx="2" ry="3" fill="#fff"/>
+                <path d="M24 36c1.5 2 6.5 2 8 0" stroke="#fff" stroke-width="1.5"/>
+            </g>
+        </svg>
+    </div>
+    
+    <div class="welcome-banner">
+      <span class="welcome-main">Offensive Blockchain Security</span><br>
+      <span class="welcome-sub">Type <b>help</b> to get started.</span>
+    </div>
+    
+    <div class="terminal-container">
+        <div class="terminal-header">
+            <div class="terminal-buttons">
+                <span class="btn close"></span>
+                <span class="btn minimize"></span>
+                <span class="btn maximize"></span>
+            </div>
+            <div class="terminal-title"></div>
+        </div>
+        
+        <div class="terminal-body">
+            <div class="terminal-output" id="terminalOutput">
+                <div class="output-line">
+                    <span class="prompt">kenzo@whitehat:~$</span>
+                    <span class="command">whoami</span>
+                </div>
+                <div class="output-line">
+                    <span class="output">Offensive Blockchain  Security Researcher | Smart Contract Auditor | DeFi Security Expert</span>
+                </div>
+                <div class="output-line">
+                    <span class="prompt">kenzo@whitehat:~$</span>
+                    <span class="command">help</span>
+                </div>
+                <div class="output-line">
+                    <span class="output">Available commands:</span>
+                </div>
+                <div class="output-line">
+                    <span class="output">├── about - About me and my background</span>
+                </div>
+                <div class="output-line">
+                    <span class="output">├── experience - Work experience and timeline</span>
+                </div>
+                <div class="output-line">
+                    <span class="output">├── skills - Technical skills and certifications</span>
+                </div>
+                <div class="output-line">
+                    <span class="output">├── blogs - Security articles and writeups</span>
+                </div>
+                <div class="output-line">
+                    <span class="output">├── contact - Get in touch</span>
+                </div>
+                <div class="output-line">
+                    <span class="output">├── clear - Clear terminal</span>
+                </div>
+                <div class="output-line">
+                    <span class="output">└── exit - Close terminal</span>
+                </div>
+                <div class="output-line">
+                    <span class="prompt">kenzo@whitehat:~$</span>
+                    <span class="command">ls -la</span>
+                </div>
+                <div class="output-line">
+                    <span class="output">total 8</span>
+                </div>
+                <div class="output-line">
+                    <span class="output">drwxr-xr-x  2 kenzo kenzo 4096 Dec 15 10:30 .</span>
+                </div>
+                <div class="output-line">
+                    <span class="output">drwxr-xr-x  3 kenzo kenzo 4096 Dec 15 10:30 ..</span>
+                </div>
+                <div class="output-line">
+                    <span class="output">-rw-r--r--  1 kenzo kenzo  256 Dec 15 10:30 about.txt</span>
+                </div>
+                <div class="output-line">
+                    <span class="output">-rw-r--r--  1 kenzo kenzo  512 Dec 15 10:30 experience.txt</span>
+                </div>
+                <div class="output-line">
+                    <span class="output">-rw-r--r--  1 kenzo kenzo  384 Dec 15 10:30 projects.txt</span>
+                </div>
+                <div class="output-line">
+                    <span class="output">-rw-r--r--  1 kenzo kenzo  128 Dec 15 10:30 contact.txt</span>
+                </div>
+            </div>
+            
+            <div class="terminal-input-line">
+                <span class="prompt">kenzo@whitehat:~$</span>
+                <input type="text" id="terminalInput" class="terminal-input" placeholder="Enter command..." autocomplete="off">
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Sections (Hidden by default) -->
+    <div class="content-sections">
+        <!-- About Section -->
+        <div id="about-content" class="content-section">
+            <div class="section-header">
+                <h2>about.txt</h2>
+                <span class="close-section" onclick="closeSection('about-content')">×</span>
+            </div>
+            <div class="section-content">
+                <div class="profile-info">
+                    <div class="profile-details">
+                        <h3>Kenzo</h3>
+                        <p class="title">Blockchain Offensive Security Researcher</p>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h4>Background</h4>
+                    <p>I'm a passionate blockchain security researcher with over 2 years of experience in offensive security and smart contract auditing. I've evolved to specialize in blockchain security as the technology has grown.</p>
+                    <div></div>
+                    <h4>Expertise</h4>
+                    <ul>
+                        <li>Smart Contract Security Auditing (Solidity, Rust, Go)</li>
+                        <li>DeFi Protocol Vulnerability Assessment</li>
+                        <li>L1 and L2 security</li>
+                        <li>Cross-Chain Bridge Security Analysis</li>
+                    </ul>
+                    <br></br>
+                    <h4>Philosophy</h4>
+                    <p>I believe in responsible disclosure and contributing to the security community. My goal is to make blockchain technology more secure through research, education, and collaboration.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Experience Section -->
+        <div id="experience-content" class="content-section">
+            <div class="section-header">
+                <h2>experience.txt</h2>
+                <span class="close-section" onclick="closeSection('experience-content')">×</span>
+            </div>
+            <div class="section-content">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2022 - Present</div>
+                        <div class="timeline-content">
+                            <h3>Senior Blockchain Security Researcher</h3>
+                            <h4>Security Company Name</h4>
+                            <ul>
+                                <li>Lead security researcher conducting comprehensive audits of DeFi protocols</li>
+                                <li>Identified critical vulnerabilities in major protocols</li>
+                                <li>Developed automated security testing tools</li>
+                                <li>Mentored junior security researchers</li>
+                                <li>Conducted 50+ smart contract audits</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2020 - 2022</div>
+                        <div class="timeline-content">
+                            <h3>Penetration Tester</h3>
+                            <h4>Previous Company</h4>
+                            <ul>
+                                <li>Performed penetration testing on web applications and infrastructure</li>
+                                <li>Specialized in API security testing</li>
+                                <li>Conducted social engineering assessments</li>
+                                <li>Completed 100+ penetration testing engagements</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2018 - 2020</div>
+                        <div class="timeline-content">
+                            <h3>Security Analyst</h3>
+                            <h4>First Company</h4>
+                            <ul>
+                                <li>Monitored security events and alerts</li>
+                                <li>Investigated security incidents</li>
+                                <li>Implemented security controls</li>
+                                <li>Conducted vulnerability assessments</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills Section -->
+        <div id="skills-content" class="content-section">
+            <div class="section-header">
+                <h2>skills.txt</h2>
+                <span class="close-section" onclick="closeSection('skills-content')">×</span>
+            </div>
+            <div class="section-content">
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Blockchain Security</h3>
+                        <div class="skill-items">
+                            <span class="skill-item">Smart Contract Auditing</span>
+                            <span class="skill-item">DeFi Protocol Analysis</span>
+                            <span class="skill-item">L1 and L2 Security</span>
+                            <span class="skill-item">Cross-Chain Bridge Security</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Programming Languages</h3>
+                        <div class="skill-items">
+                            <span class="skill-item">Solidity</span>
+                            <span class="skill-item">Rust</span>
+                            <span class="skill-item">Go</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Security Tools</h3>
+                        <div class="skill-items">
+                            <span class="skill-item">Foundry</span>
+                            <span class="skill-item">Certora FV</span>
+                            <span class="skill-item">Hardhat</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Technologies</h3>
+                        <div class="skill-items">
+                            <span class="skill-item">Ethereum</span>
+                            <span class="skill-item">Solana</span>
+                            <span class="skill-item">Substrate</span>
+                            <span class="skill-item">Sui/Aptos</span>
+                            <span class="skill-item">Bridges</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Section 
+        <div id="projects-content" class="content-section">
+            <div class="section-header">
+                <h2>projects.txt</h2>
+                <span class="close-section" onclick="closeSection('projects-content')">×</span>
+            </div>
+            <div class="section-content">
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Smart Contract Vulnerability Scanner</h3>
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <p>Automated tool for detecting common smart contract vulnerabilities including reentrancy, integer overflow, and access control issues.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Solidity</span>
+                            <span class="tech-tag">Mythril</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>MEV Bot Detection System</h3>
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                                <a href="#" class="project-link"><i class="fas fa-file-alt"></i></a>
+                            </div>
+                        </div>
+                        <p>Research project analyzing Maximum Extractable Value extraction techniques and developing detection mechanisms for malicious MEV bots.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Rust</span>
+                            <span class="tech-tag">Ethereum</span>
+                            <span class="tech-tag">Web3</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Cross-Chain Bridge Security Framework</h3>
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <p>Comprehensive security assessment framework for cross-chain bridge implementations with automated testing capabilities.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Go</span>
+                            <span class="tech-tag">Solidity</span>
+                            <span class="tech-tag">Foundry</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Hardware Wallet Security Analysis</h3>
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                                <a href="#" class="project-link"><i class="fas fa-file-alt"></i></a>
+                            </div>
+                        </div>
+                        <p>Security research on hardware wallet implementations, identifying potential attack vectors and developing countermeasures.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">C</span>
+                            <span class="tech-tag">Cryptography</span>
+                            <span class="tech-tag">Hardware</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        -->
+
+        <!-- Blog Section
+        <div id="blog-content" class="content-section">
+            <div class="section-header">
+                <h2>blog.txt</h2>
+                <span class="close-section" onclick="closeSection('blog-content')">×</span>
+            </div>
+            <div class="section-content">
+                <div class="blog-posts">
+                    <article class="blog-post">
+                        <div class="post-header">
+                            <h3>Reentrancy Attacks in DeFi: A Deep Dive</h3>
+                            <span class="post-date">2024-01-15</span>
+                        </div>
+                        <p>Analysis of reentrancy vulnerabilities in DeFi protocols, including real-world examples and mitigation strategies.</p>
+                        <div class="post-tags">
+                            <span class="tag">DeFi</span>
+                            <span class="tag">Solidity</span>
+                            <span class="tag">Vulnerability</span>
+                        </div>
+                    </article>
+                    <article class="blog-post">
+                        <div class="post-header">
+                            <h3>MEV Extraction Techniques and Prevention</h3>
+                            <span class="post-date">2024-01-10</span>
+                        </div>
+                        <p>Comprehensive guide to Maximum Extractable Value extraction methods and how to protect against them.</p>
+                        <div class="post-tags">
+                            <span class="tag">MEV</span>
+                            <span class="tag">Ethereum</span>
+                            <span class="tag">Trading</span>
+                        </div>
+                    </article>e
+                    <article class="blog-post">
+                        <div class="post-header">
+                            <h3>Cross-Chain Bridge Security Assessment</h3>
+                            <span class="post-date">2024-01-05</span>
+                        </div>
+                        <p>Security analysis of cross-chain bridge implementations and common attack vectors.</p>
+                        <div class="post-tags">
+                            <span class="tag">Bridges</span>
+                            <span class="tag">Cross-Chain</span>
+                            <span class="tag">Security</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+
+         -->
+
+        <!-- Contact Section -->
+        <div id="contact-content" class="content-section">
+            <div class="section-header">
+                <h2>contact.txt</h2>
+                <span class="close-section" onclick="closeSection('contact-content')">×</span>
+            </div>
+            <div class="section-content">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>I'm always interested in new opportunities, collaborations, or just discussing blockchain security.</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <span>your.email@example.com</span>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fab fa-twitter"></i>
+                            <span>Twitter</span>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fab fa-github"></i>
+                            <span>Github</span>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fab fa-linkedin"></i>
+                            <span>linkedin.com/in/YourProfile</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Social Handles -->
+    <div class="site-footer">
+      <div class="social-handles">
+        <a href="https://twitter.com/kenzowhitehat" target="_blank" rel="noopener noreferrer" class="social-link">
+          <!-- Twitter SVG -->
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;margin-right:8px;" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22.46 5.924c-.793.352-1.645.59-2.54.698a4.48 4.48 0 0 0 1.965-2.475 8.94 8.94 0 0 1-2.828 1.082A4.48 4.48 0 0 0 16.11 4c-2.48 0-4.49 2.014-4.49 4.496 0 .352.04.695.116 1.022C7.728 9.37 4.1 7.555 1.67 4.905c-.386.664-.607 1.437-.607 2.26 0 1.56.793 2.936 2.003 3.744a4.48 4.48 0 0 1-2.034-.563v.057c0 2.18 1.55 4.002 3.604 4.417-.377.104-.775.16-1.186.16-.29 0-.568-.028-.84-.08.57 1.77 2.22 3.06 4.18 3.09A8.98 8.98 0 0 1 2 19.54a12.67 12.67 0 0 0 6.88 2.017c8.26 0 12.78-6.84 12.78-12.77 0-.195-.004-.39-.013-.583A9.1 9.1 0 0 0 24 4.59a8.98 8.98 0 0 1-2.54.697z" fill="#00ff00"/>
+          </svg>
+          @kenzowhitehat
+        </a>
+        &nbsp;&nbsp;
+        <a href="https://github.com/YourUsername" target="_blank" rel="noopener noreferrer" class="social-link">
+          <!-- GitHub SVG -->
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;margin-right:8px;" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.477 2 2 6.484 2 12.021c0 4.428 2.865 8.184 6.839 9.504.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.987 1.029-2.687-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.546 1.378.202 2.397.1 2.65.64.7 1.028 1.594 1.028 2.687 0 3.847-2.338 4.695-4.566 4.944.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.749 0 .267.18.577.688.48C19.138 20.2 22 16.447 22 12.021 22 6.484 17.523 2 12 2z" fill="#00ff00"/>
+          </svg>
+          Github
+        </a>
+    <script src="script.js"></script>
+
+</body>
+</div>
+© 2025 Kenzo. All rights reserved.z
+</div>
+</html> 
