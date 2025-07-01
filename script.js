@@ -61,6 +61,7 @@ class Terminal {
             'experience': this.showExperience.bind(this),
             'skills': this.showSkills.bind(this),
             'projects': this.showProjects.bind(this),
+            'blog': this.showBlog.bind(this),
             'blogs': this.showBlog.bind(this),
             'contact': this.showContact.bind(this),
             'clear': this.clearTerminal.bind(this),
@@ -212,7 +213,8 @@ class Terminal {
     
     // --- BLOG MARKDOWN SUPPORT ---
     blogPosts = [
-        { slug: 'hello-world', title: 'Hello World', file: 'blogs/hello-world.md' }
+        { slug: 'hello-world', title: 'Hello World', file: 'blogs/hello-world.md' },
+        { slug: 'immunefi-hack1', title: 'Immunefi Hack Analysis', file: 'blogs/immunefi_hack1.md' }
         // Add more posts here as needed
     ];
 
