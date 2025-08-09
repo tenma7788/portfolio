@@ -31,13 +31,13 @@
       <!-- Contact Button -->
       <div class="contact-button-container">
         <a href="https://twitter.com/messages/compose?recipient_id=kenzowhitehat" target="_blank" rel="noopener noreferrer" class="contact-audit-btn">
-          Contact for Private Audit
+          Contact for Private Review
         </a>
       </div>
       
       <div class="security-tracker">
         <div class="tracker-line">
-          <span class="tracker-item critical">Critical: 12</span>
+          <span class="tracker-item critical">Critical: 4</span>
           <span class="tracker-item high">High: 10</span>
           <span class="tracker-item medium">Medium: 32</span>
         </div>
@@ -63,13 +63,6 @@
             <div class="terminal-output" id="terminalOutput">
                 <div class="output-line">
                     <span class="prompt">kenzo@whitehat:~$</span>
-                    <span class="command">whoami</span>
-                </div>
-                <div class="output-line">
-                    <span class="output">Offensive Blockchain  Security Researcher | Smart Contract Auditor | DeFi Security Expert</span>
-                </div>
-                <div class="output-line">
-                    <span class="prompt">kenzo@whitehat:~$</span>
                     <span class="command">help</span>
                 </div>
                 <div class="output-line">
@@ -92,9 +85,6 @@
                 </div>
                 <div class="output-line">
                     <span class="output">├── clear - Clear terminal</span>
-                </div>
-                <div class="output-line">
-                    <span class="output">└── exit - Close terminal</span>
                 </div>
                 <div class="output-line">
                     <span class="prompt">kenzo@whitehat:~$</span>
@@ -130,16 +120,11 @@
         </div>
     </div>
 
-    <!-- TEST ELEMENT -->
-    <div style="background: red; color: white; padding: 20px; text-align: center; margin: 20px;">
-        <h2>TEST SECTION - This should be visible!</h2>
-    </div>
-
-    <!-- Trusted By Section -->
+    <!-- Trust by section build it when needed
     <div class="trusted-by-section">
         <h3 class="trusted-by-title">TRUSTED BY</h3>
         
-        <!-- First Row - DeFi Protocols -->
+       
         <div class="trusted-by-container">
             <div class="trusted-company">
                 <div class="company-logo">🔗</div>
@@ -163,7 +148,6 @@
             </div>
         </div>
         
-        <!-- Second Row - DeFi Protocols -->
         <div class="trusted-by-container">
             <div class="trusted-company">
                 <div class="company-logo">🏦</div>
@@ -187,6 +171,8 @@
             </div>
         </div>
     </div>
+
+    --->
 
     <!-- Content Sections (Hidden by default) -->
     <div class="content-sections">
@@ -216,7 +202,7 @@
                     </ul>
                     <br></br>
                     <h4>Philosophy</h4>
-                    <p>I believe in responsible disclosure and contributing to the security community. My goal is to make blockchain technology more secure through research, education, and collaboration.</p>
+                    <p>My goal is to make blockchain technology more secure through research, education, and collaboration.</p>
                 </div>
             </div>
         </div>
@@ -230,42 +216,14 @@
             <div class="section-content">
                 <div class="timeline">
                     <div class="timeline-item">
-                        <div class="timeline-date">2022 - Present</div>
+                        <div class="timeline-date">2023 - Present</div>
                         <div class="timeline-content">
-                            <h3>Senior Blockchain Security Researcher</h3>
-                            <h4>Security Company Name</h4>
+                            <h3>Blockchain Security Researcher (Freelance)</h3>
+                            <h4>Immunefi, Cantina, Sherlock</h4>
                             <ul>
-                                <li>Lead security researcher conducting comprehensive audits of DeFi protocols</li>
+                                <li>Security researcher conducting comprehensive audits of DeFi protocols</li>
                                 <li>Identified critical vulnerabilities in major protocols</li>
-                                <li>Developed automated security testing tools</li>
-                                <li>Mentored junior security researchers</li>
-                                <li>Conducted 50+ smart contract audits</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">2020 - 2022</div>
-                        <div class="timeline-content">
-                            <h3>Penetration Tester</h3>
-                            <h4>Previous Company</h4>
-                            <ul>
-                                <li>Performed penetration testing on web applications and infrastructure</li>
-                                <li>Specialized in API security testing</li>
-                                <li>Conducted social engineering assessments</li>
-                                <li>Completed 100+ penetration testing engagements</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">2018 - 2020</div>
-                        <div class="timeline-content">
-                            <h3>Security Analyst</h3>
-                            <h4>First Company</h4>
-                            <ul>
-                                <li>Monitored security events and alerts</li>
-                                <li>Investigated security incidents</li>
-                                <li>Implemented security controls</li>
-                                <li>Conducted vulnerability assessments</li>
+                                <li>Completed 20+ smart contract contests</li>
                             </ul>
                         </div>
                     </div>
@@ -320,79 +278,7 @@
             </div>
         </div>
 
-        <!-- Projects Section 
-        <div id="projects-content" class="content-section">
-            <div class="section-header">
-                <h2>projects.txt</h2>
-                <span class="close-section" onclick="closeSection('projects-content')">×</span>
-            </div>
-            <div class="section-content">
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-header">
-                            <h3>Smart Contract Vulnerability Scanner</h3>
-                            <div class="project-links">
-                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                            </div>
-                        </div>
-                        <p>Automated tool for detecting common smart contract vulnerabilities including reentrancy, integer overflow, and access control issues.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Solidity</span>
-                            <span class="tech-tag">Mythril</span>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-header">
-                            <h3>MEV Bot Detection System</h3>
-                            <div class="project-links">
-                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-                                <a href="#" class="project-link"><i class="fas fa-file-alt"></i></a>
-                            </div>
-                        </div>
-                        <p>Research project analyzing Maximum Extractable Value extraction techniques and developing detection mechanisms for malicious MEV bots.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Rust</span>
-                            <span class="tech-tag">Ethereum</span>
-                            <span class="tech-tag">Web3</span>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-header">
-                            <h3>Cross-Chain Bridge Security Framework</h3>
-                            <div class="project-links">
-                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                            </div>
-                        </div>
-                        <p>Comprehensive security assessment framework for cross-chain bridge implementations with automated testing capabilities.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Go</span>
-                            <span class="tech-tag">Solidity</span>
-                            <span class="tech-tag">Foundry</span>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-header">
-                            <h3>Hardware Wallet Security Analysis</h3>
-                            <div class="project-links">
-                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-                                <a href="#" class="project-link"><i class="fas fa-file-alt"></i></a>
-                            </div>
-                        </div>
-                        <p>Security research on hardware wallet implementations, identifying potential attack vectors and developing countermeasures.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">C</span>
-                            <span class="tech-tag">Cryptography</span>
-                            <span class="tech-tag">Hardware</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        -->
-
+        
         <!-- Blog Section -->
         <div id="blog-content" class="content-section">
             <div class="section-header">
@@ -418,7 +304,7 @@
                     <div class="contact-methods">
                         <div class="contact-method">
                             <i class="fas fa-envelope"></i>
-                            <span>your.email@example.com</span>
+                            <span>businesswithtenma@gmail.com</span>
                         </div>
                         <div class="contact-method">
                             <i class="fab fa-twitter"></i>
@@ -427,10 +313,6 @@
                         <div class="contact-method">
                             <i class="fab fa-github"></i>
                             <span>Github</span>
-                        </div>
-                        <div class="contact-method">
-                            <i class="fab fa-linkedin"></i>
-                            <span>linkedin.com/in/YourProfile</span>
                         </div>
                     </div>
                 </div>
@@ -449,7 +331,7 @@
           @kenzowhitehat
         </a>
         &nbsp;&nbsp;
-        <a href="https://github.com/YourUsername" target="_blank" rel="noopener noreferrer" class="social-link">
+        <a href="https://github.com/tenma7788" target="_blank" rel="noopener noreferrer" class="social-link">
           <!-- GitHub SVG -->
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;margin-right:8px;" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 2C6.477 2 2 6.484 2 12.021c0 4.428 2.865 8.184 6.839 9.504.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.987 1.029-2.687-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.546 1.378.202 2.397.1 2.65.64.7 1.028 1.594 1.028 2.687 0 3.847-2.338 4.695-4.566 4.944.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.749 0 .267.18.577.688.48C19.138 20.2 22 16.447 22 12.021 22 6.484 17.523 2 12 2z" fill="#00ff00"/>
