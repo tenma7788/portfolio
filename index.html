@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>kenzo@whitehat:~$</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="trusted-styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
@@ -15,20 +16,36 @@
     <div class="matrix-bg">
         <canvas id="matrix"></canvas>
     </div>
-    <div class="hacker-face-bg">
-        <!-- High-contrast Guy Fawkes Mask SVG -->
-        <svg viewBox="0 0 64 64" width="600" height="600" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g opacity="1">
-                <path d="M32 8C18 8 8 20 8 32c0 12 10 24 24 24s24-12 24-24C56 20 46 8 32 8zm0 44c-10.5 0-20-9.5-20-20S21.5 12 32 12s20 9.5 20 20-9.5 20-20 20zm-8-16c0 2.2 3.6 4 8 4s8-1.8 8-4m-16-4c0-2.2 3.6-4 8-4s8 1.8 8 4" stroke="#fff" stroke-width="2"/>
-                <ellipse cx="24" cy="28" rx="2" ry="3" fill="#fff"/>
-                <ellipse cx="40" cy="28" rx="2" ry="3" fill="#fff"/>
-                <path d="M24 36c1.5 2 6.5 2 8 0" stroke="#fff" stroke-width="1.5"/>
-            </g>
-        </svg>
-    </div>
+   
     
+    <!-- Web3 Hacks Ticker -->
+    <div class="ticker-container">
+        <div class="ticker-content" id="tickerContent">
+            <!-- Content will be populated dynamically via API -->
+        </div>
+    </div>
+
     <div class="welcome-banner">
       <span class="welcome-main">Offensive Blockchain Security</span><br>
+      
+      <!-- Contact Button -->
+      <div class="contact-button-container">
+        <a href="https://twitter.com/messages/compose?recipient_id=kenzowhitehat" target="_blank" rel="noopener noreferrer" class="contact-audit-btn">
+          Contact for Private Audit
+        </a>
+      </div>
+      
+      <div class="security-tracker">
+        <div class="tracker-line">
+          <span class="tracker-item critical">Critical: 12</span>
+          <span class="tracker-item high">High: 10</span>
+          <span class="tracker-item medium">Medium: 32</span>
+        </div>
+        <div class="tracker-line">
+          <span class="tracker-item value">Total Value Secured: 1 Million</span>
+          <span class="tracker-item earning">Total Public Earning: $20K</span>
+        </div>
+      </div>
       <span class="welcome-sub">Type <b>help</b> to get started.</span>
     </div>
     
@@ -109,6 +126,64 @@
             <div class="terminal-input-line">
                 <span class="prompt">kenzo@whitehat:~$</span>
                 <input type="text" id="terminalInput" class="terminal-input" placeholder="Enter command..." autocomplete="off">
+            </div>
+        </div>
+    </div>
+
+    <!-- TEST ELEMENT -->
+    <div style="background: red; color: white; padding: 20px; text-align: center; margin: 20px;">
+        <h2>TEST SECTION - This should be visible!</h2>
+    </div>
+
+    <!-- Trusted By Section -->
+    <div class="trusted-by-section">
+        <h3 class="trusted-by-title">TRUSTED BY</h3>
+        
+        <!-- First Row - DeFi Protocols -->
+        <div class="trusted-by-container">
+            <div class="trusted-company">
+                <div class="company-logo">🔗</div>
+                <span class="company-name">Chainlink</span>
+            </div>
+            <div class="trusted-company">
+                <div class="company-logo">🌀</div>
+                <span class="company-name">Curve</span>
+            </div>
+            <div class="trusted-company">
+                <div class="company-logo">🔥</div>
+                <span class="company-name">Balancer</span>
+            </div>
+            <div class="trusted-company">
+                <div class="company-logo">🚀</div>
+                <span class="company-name">Yearn</span>
+            </div>
+            <div class="trusted-company">
+                <div class="company-logo">💎</div>
+                <span class="company-name">SushiSwap</span>
+            </div>
+        </div>
+        
+        <!-- Second Row - DeFi Protocols -->
+        <div class="trusted-by-container">
+            <div class="trusted-company">
+                <div class="company-logo">🏦</div>
+                <span class="company-name">Aave</span>
+            </div>
+            <div class="trusted-company">
+                <div class="company-logo">🦄</div>
+                <span class="company-name">Uniswap</span>
+            </div>
+            <div class="trusted-company">
+                <div class="company-logo">💉</div>
+                <span class="company-name">Injective</span>
+            </div>
+            <div class="trusted-company">
+                <div class="company-logo">🌊</div>
+                <span class="company-name">Compound</span>
+            </div>
+            <div class="trusted-company">
+                <div class="company-logo">⚖️</div>
+                <span class="company-name">MakerDAO</span>
             </div>
         </div>
     </div>
@@ -381,10 +456,10 @@
           </svg>
           Github
         </a>
-    <script src="script.js"></script>
+      </div>
+      © 2025 Kenzo. All rights reserved.
+    </div>
 
+    <script src="script.js"></script>
 </body>
-</div>
-© 2025 Kenzo. All rights reserved.z
-</div>
 </html> 

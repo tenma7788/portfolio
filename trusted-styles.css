@@ -1,0 +1,258 @@
+/* Trusted By Section */
+.trusted-by-section {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(135deg, rgba(0, 255, 0, 0.03) 0%, rgba(0, 255, 0, 0.08) 50%, rgba(0, 255, 0, 0.03) 100%);
+    border-radius: 15px;
+    border: 1px solid rgba(0, 255, 0, 0.2);
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.1), inset 0 0 20px rgba(0, 255, 0, 0.05);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+}
+
+.trusted-by-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(0, 255, 0, 0.05), transparent);
+    animation: shimmer 4s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes shimmer {
+    0%, 100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+.trusted-by-title {
+    color: #00ff00;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-family: 'Quantico', 'Orbitron', sans-serif;
+    text-shadow: 0 0 15px #00ff00, 0 0 30px rgba(0, 255, 0, 0.5);
+    position: relative;
+    animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+.trusted-by-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00ff00, transparent);
+    animation: lineExpand 2s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+    0% { text-shadow: 0 0 15px #00ff00, 0 0 30px rgba(0, 255, 0, 0.5); }
+    100% { text-shadow: 0 0 20px #00ff00, 0 0 40px rgba(0, 255, 0, 0.8), 0 0 60px rgba(0, 255, 0, 0.3); }
+}
+
+@keyframes lineExpand {
+    0% { width: 50px; opacity: 0.5; }
+    100% { width: 150px; opacity: 1; }
+}
+
+.trusted-by-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding: 20px 0;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.trusted-by-container:last-child {
+    margin-bottom: 0;
+}
+
+.trusted-company {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0.7;
+    padding: 20px;
+    border-radius: 15px;
+    background: linear-gradient(145deg, rgba(0, 0, 0, 0.3), rgba(0, 255, 0, 0.05));
+    border: 1px solid rgba(0, 255, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    width: 140px;
+    height: 120px;
+    min-width: 140px;
+    min-height: 120px;
+}
+
+.trusted-company::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 0, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.trusted-company:hover::before {
+    left: 100%;
+}
+
+.trusted-company:hover {
+    opacity: 1;
+    transform: translateY(-8px) scale(1.05);
+    border-color: rgba(0, 255, 0, 0.4);
+    box-shadow: 0 10px 30px rgba(0, 255, 0, 0.2), 0 0 20px rgba(0, 255, 0, 0.1);
+    background: linear-gradient(145deg, rgba(0, 0, 0, 0.4), rgba(0, 255, 0, 0.1));
+}
+
+.company-logo {
+    font-size: 3rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    filter: grayscale(0.6) brightness(1.2);
+    position: relative;
+    z-index: 2;
+    animation: float 3s ease-in-out infinite;
+}
+
+.trusted-company:hover .company-logo {
+    filter: grayscale(0) brightness(1.5) drop-shadow(0 0 10px rgba(0, 255, 0, 0.5));
+    transform: scale(1.2) rotate(5deg);
+    animation: none;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+}
+
+.company-name {
+    color: #00ff00;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Quantico', 'Orbitron', sans-serif;
+    text-shadow: 0 0 8px rgba(0, 255, 0, 0.6);
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.trusted-company:hover .company-name {
+    text-shadow: 0 0 15px rgba(0, 255, 0, 0.8), 0 0 25px rgba(0, 255, 0, 0.4);
+    transform: scale(1.1);
+    letter-spacing: 3px;
+}
+
+/* 14-15 inch Laptops - Trusted By Section Optimization */
+@media (min-width: 1024px) and (max-width: 1440px) {
+    .trusted-by-section {
+        margin: 35px auto;
+        padding: 25px;
+    }
+    
+    .trusted-by-title {
+        font-size: 1.9rem;
+        margin-bottom: 35px;
+    }
+    
+    .trusted-by-container {
+        gap: 45px;
+        padding: 18px 0;
+        margin-bottom: 12px;
+    }
+    
+    .trusted-company {
+        width: 135px;
+        height: 115px;
+        min-width: 135px;
+        min-height: 115px;
+        padding: 18px;
+    }
+    
+    .company-logo {
+        font-size: 2.8rem;
+    }
+    
+    .company-name {
+        font-size: 0.9rem;
+        letter-spacing: 1.8px;
+    }
+}
+
+/* Responsive design for trusted by section */
+@media (max-width: 768px) {
+    .trusted-by-container {
+        gap: 30px;
+    }
+    
+    .trusted-by-title {
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+    }
+    
+    .trusted-company {
+        width: 120px;
+        height: 100px;
+        min-width: 120px;
+        min-height: 100px;
+        padding: 15px;
+    }
+    
+    .company-logo {
+        font-size: 2rem;
+    }
+    
+    .company-name {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .trusted-by-container {
+        gap: 25px;
+    }
+    
+    .trusted-by-title {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+    }
+    
+    .trusted-company {
+        width: 100px;
+        height: 90px;
+        min-width: 100px;
+        min-height: 90px;
+        padding: 12px;
+        gap: 10px;
+    }
+    
+    .company-logo {
+        font-size: 1.8rem;
+    }
+    
+    .company-name {
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+    }
+}

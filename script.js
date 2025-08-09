@@ -7,17 +7,39 @@ class MatrixBackground {
         this.fontSize = 14;
         this.columns = 0;
         this.drops = [];
-        
+        this.mouseOffset = 0; // -1 (left) to 1 (right)
+
         this.init();
         this.animate();
+        this.addMouseMoveListener();
     }
-    
+
+    addMouseMoveListener() {
+        // Add mouse move listener to the canvas
+        this.canvas.addEventListener('mousemove', (e) => {
+            const rect = this.canvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const percent = x / this.canvas.width;
+            this.mouseOffset = (percent - 0.5) * 2; // -1 (left) to 1 (right)
+            console.log('Mouse move detected, offset:', this.mouseOffset);
+        });
+        
+        this.canvas.addEventListener('mouseleave', () => {
+            this.mouseOffset = 0;
+            console.log('Mouse left canvas');
+        });
+        
+        this.canvas.addEventListener('mouseenter', () => {
+            console.log('Mouse entered canvas');
+        });
+    }
+
     init() {
         this.canvas.width = window.innerWidth;
         this.canvas.height = window.innerHeight;
         this.columns = Math.floor(this.canvas.width / this.fontSize);
         this.drops = new Array(this.columns).fill(1);
-        
+
         window.addEventListener('resize', () => {
             this.canvas.width = window.innerWidth;
             this.canvas.height = window.innerHeight;
@@ -25,24 +47,29 @@ class MatrixBackground {
             this.drops = new Array(this.columns).fill(1);
         });
     }
-    
+
     animate() {
         this.ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
         this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
-        
+
         this.ctx.fillStyle = '#00ff41';
         this.ctx.font = `${this.fontSize}px monospace`;
-        
+
+        // Calculate horizontal offset in pixels (max 2 fontSize left/right)
+        const maxOffset = this.fontSize * 2;
+        const offset = this.mouseOffset * maxOffset;
+
         for (let i = 0; i < this.drops.length; i++) {
             const text = this.characters.charAt(Math.floor(Math.random() * this.characters.length));
-            this.ctx.fillText(text, i * this.fontSize, this.drops[i] * this.fontSize);
-            
+            // Apply the offset to the x position
+            this.ctx.fillText(text, i * this.fontSize + offset, this.drops[i] * this.fontSize);
+
             if (this.drops[i] * this.fontSize > this.canvas.height && Math.random() > 0.975) {
                 this.drops[i] = 0;
             }
             this.drops[i]++;
         }
-        
+
         requestAnimationFrame(() => this.animate());
     }
 }
@@ -274,8 +301,29 @@ class Terminal {
         }, 1000);
     }
     
-    whoami() {
-        this.addOutputLine('<span class="output">Offensive Blockchain Security Researcher | Smart Contract Auditor | DeFi Security Expert</span>');
+    async whoami() {
+        this.addOutputLine('<span class="output">Fetching your information...</span>');
+        
+        try {
+            // Fetch IP address from a public API
+            const response = await fetch('https://api.ipify.org?format=json');
+            const data = await response.json();
+            this.addOutputLine(`<span class="output">Your IP: ${data.ip}</span>`);
+            
+            // Optionally, get more detailed info
+            const geoResponse = await fetch(`https://ipapi.co/${data.ip}/json/`);
+            const geoData = await geoResponse.json();
+            
+            if (geoData.city && geoData.country_name) {
+                this.addOutputLine(`<span class="output">Your Location: ${geoData.city}, ${geoData.country_name}</span>`);
+            }
+            if (geoData.org) {
+                this.addOutputLine(`<span class="output">Your ISP: ${geoData.org}</span>`);
+            }
+        } catch (error) {
+            this.addOutputLine('<span class="output">Could not fetch your information</span>');
+            console.error('Error fetching IP:', error);
+        }
     }
     
     listFiles(args) {
@@ -421,6 +469,160 @@ function closeSection(sectionId) {
     }
 }
 
+// Web3 Hacks Ticker Manager
+class Web3HacksTicker {
+    constructor() {
+        this.tickerContent = document.getElementById('tickerContent');
+        this.hackData = [];
+        this.fallbackData = [
+            '🚨 BREAKING: $50M drained from DeFi protocol via flash loan attack',
+            '⚠️ Smart contract vulnerability discovered in popular NFT marketplace',
+            '🔥 Cross-chain bridge exploited for $25M using signature replay attack',
+            '💀 Reentrancy bug leads to $15M loss in yield farming protocol',
+            '🎯 Oracle manipulation attack nets hacker $8M from lending platform',
+            '⛔ Governance token exploit allows attacker to drain treasury',
+            '🚨 Private key compromise leads to $30M theft from multi-sig wallet',
+            '⚠️ MEV bot sandwich attack causes $2M in user losses'
+        ];
+        
+        this.init();
+    }
+
+    async init() {
+        await this.fetchHackData();
+        this.updateTicker();
+        // Refresh data every 10 minutes
+        setInterval(() => this.fetchHackData(), 600000);
+    }
+
+    async fetchHackData() {
+        try {
+            // Try multiple sources for Web3 security incidents
+            const sources = [
+                this.fetchFromRekt(),
+                this.fetchFromCryptoNews(),
+                this.fetchFromDefillama()
+            ];
+
+            const results = await Promise.allSettled(sources);
+            let allHacks = [];
+
+            results.forEach(result => {
+                if (result.status === 'fulfilled' && result.value.length > 0) {
+                    allHacks = allHacks.concat(result.value);
+                }
+            });
+
+            if (allHacks.length > 0) {
+                this.hackData = allHacks.slice(0, 10); // Keep latest 10
+                console.log('Fetched', this.hackData.length, 'hack incidents');
+            } else {
+                console.log('Using fallback data');
+                this.hackData = this.fallbackData;
+            }
+        } catch (error) {
+            console.error('Error fetching hack data:', error);
+            this.hackData = this.fallbackData;
+        }
+    }
+
+    async fetchFromRekt() {
+        try {
+            // Rekt.news API (if available) or scrape recent incidents
+            const response = await fetch('https://api.rekt.news/v1/posts?limit=5');
+            if (!response.ok) throw new Error('Rekt API failed');
+            
+            const data = await response.json();
+            return data.posts.map(post => 
+                `🚨 REKT: ${post.title} - ${this.formatAmount(post.fundsLost || 0)}M lost`
+            );
+        } catch (error) {
+            return [];
+        }
+    }
+
+    async fetchFromCryptoNews() {
+        try {
+            // CoinGecko or similar API for security-related news
+            const response = await fetch('https://api.coingecko.com/api/v3/news?categories=security');
+            if (!response.ok) throw new Error('CoinGecko API failed');
+            
+            const data = await response.json();
+            return data.data.slice(0, 3).map(article => 
+                `⚠️ ${article.title.substring(0, 80)}...`
+            );
+        } catch (error) {
+            return [];
+        }
+    }
+
+    async fetchFromDefillama() {
+        try {
+            // DefiLlama hacks API
+            const response = await fetch('https://api.llama.fi/hacks');
+            if (!response.ok) throw new Error('DefiLlama API failed');
+            
+            const data = await response.json();
+            const recentHacks = data.slice(0, 5);
+            
+            return recentHacks.map(hack => {
+                const amount = this.formatAmount(hack.amount || 0);
+                const protocol = hack.name || 'Unknown Protocol';
+                const emoji = this.getHackEmoji(hack.classification);
+                return `${emoji} ${protocol} exploited for ${amount}M - ${hack.technique || 'Unknown method'}`;
+            });
+        } catch (error) {
+            return [];
+        }
+    }
+
+    formatAmount(amount) {
+        if (amount >= 1000000) {
+            return (amount / 1000000).toFixed(1);
+        } else if (amount >= 1000) {
+            return (amount / 1000).toFixed(1) + 'K';
+        }
+        return amount.toString();
+    }
+
+    getHackEmoji(classification) {
+        const emojiMap = {
+            'flash-loan': '⚡',
+            'reentrancy': '🔄',
+            'oracle': '🔮',
+            'governance': '🗳️',
+            'bridge': '🌉',
+            'private-key': '🔑',
+            'smart-contract': '📜',
+            'default': '🚨'
+        };
+        return emojiMap[classification] || emojiMap.default;
+    }
+
+    updateTicker() {
+        if (this.hackData.length === 0) return;
+
+        // Clear existing content
+        this.tickerContent.innerHTML = '';
+
+        // Create ticker items
+        this.hackData.forEach(hack => {
+            const span = document.createElement('span');
+            span.className = 'ticker-item';
+            span.textContent = hack;
+            this.tickerContent.appendChild(span);
+        });
+
+        // Duplicate content for seamless loop
+        this.hackData.forEach(hack => {
+            const span = document.createElement('span');
+            span.className = 'ticker-item';
+            span.textContent = hack;
+            this.tickerContent.appendChild(span);
+        });
+    }
+}
+
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     // Start matrix background
@@ -431,6 +633,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initialize content manager
     new ContentManager();
+
+    // Initialize Web3 hacks ticker
+    new Web3HacksTicker();
     
     // Add some initial delay for dramatic effect
     setTimeout(() => {
@@ -449,4 +654,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-}); 
+});
