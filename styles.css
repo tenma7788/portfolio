@@ -828,7 +828,7 @@ section {
     display: flex;
     align-items: center;
     height: 100%;
-    animation: scroll-left 120s linear infinite;
+    animation: scroll-left 30s linear infinite;
     white-space: nowrap;
 }
 
@@ -1300,8 +1300,9 @@ section {
 /* Tablet Portrait (600px - 767px) */
 @media (min-width: 600px) and (max-width: 767px) {
     .welcome-banner {
-        width: 95vw;
-        margin: 40px auto 12px auto;
+        width: 90vw;
+        margin: 60px auto 12px auto;
+        padding: 0 20px;
     }
     .welcome-main { 
         font-size: 2.4rem; 
@@ -1309,12 +1310,17 @@ section {
         letter-spacing: 1px;
     }
     .terminal-container { 
-        width: 95vw; 
+        width: 90vw; 
         height: 55vh;
         max-height: 320px;
         font-size: 0.9rem;
-        margin-bottom: 50px;
+        margin: 0 auto 50px auto;
         border-radius: 8px;
+    }
+    .trusted-by-section {
+        width: 90vw;
+        margin: 2rem auto;
+        padding: 2rem 20px;
     }
     .tracker-line { 
         gap: 15px; 
@@ -1339,8 +1345,9 @@ section {
 /* Large Mobile (480px - 599px) */
 @media (min-width: 480px) and (max-width: 599px) {
     .welcome-banner {
-        width: 98vw;
-        margin: 35px auto 10px auto;
+        width: 92vw;
+        margin: 55px auto 10px auto;
+        padding: 0 15px;
     }
     .welcome-main { 
         font-size: 2rem; 
@@ -1348,12 +1355,17 @@ section {
         letter-spacing: 0.5px;
     }
     .terminal-container { 
-        width: 98vw; 
+        width: 92vw; 
         height: 60vh;
         max-height: 300px;
         font-size: 0.85rem;
-        margin-bottom: 40px;
+        margin: 0 auto 40px auto;
         border-radius: 5px;
+    }
+    .trusted-by-section {
+        width: 92vw;
+        margin: 2rem auto;
+        padding: 2rem 15px;
     }
     .tracker-line { 
         gap: 10px; 
@@ -1382,8 +1394,9 @@ section {
 /* Standard Mobile (360px - 479px) */
 @media (min-width: 360px) and (max-width: 479px) {
     .welcome-banner {
-        width: 99vw;
-        margin: 30px auto 8px auto;
+        width: 90vw;
+        margin: 50px auto 8px auto;
+        padding: 0 20px;
     }
     .welcome-main { 
         font-size: 1.6rem; 
@@ -1391,12 +1404,17 @@ section {
         letter-spacing: 0px;
     }
     .terminal-container { 
-        width: 99vw; 
+        width: 90vw; 
         height: 65vh;
         max-height: 280px;
         font-size: 0.8rem;
-        margin-bottom: 30px;
+        margin: 0 auto 30px auto;
         border-radius: 3px;
+    }
+    .trusted-by-section {
+        width: 90vw;
+        margin: 2rem auto;
+        padding: 2rem 20px;
     }
     .tracker-line { 
         gap: 8px; 
@@ -1425,8 +1443,9 @@ section {
 /* Small Mobile (320px - 359px) */
 @media (max-width: 359px) {
     .welcome-banner {
-        width: 99vw;
-        margin: 25px auto 5px auto;
+        width: 88vw;
+        margin: 45px auto 5px auto;
+        padding: 0 25px;
     }
     .welcome-main { 
         font-size: 1.3rem; 
@@ -1434,12 +1453,17 @@ section {
         letter-spacing: 0px;
     }
     .terminal-container { 
-        width: 99vw; 
+        width: 88vw; 
         height: 70vh;
         max-height: 250px;
         font-size: 0.75rem;
-        margin-bottom: 20px;
+        margin: 0 auto 20px auto;
         border-radius: 2px;
+    }
+    .trusted-by-section {
+        width: 88vw;
+        margin: 2rem auto;
+        padding: 2rem 25px;
     }
     .tracker-line { 
         gap: 5px; 
