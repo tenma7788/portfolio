@@ -1,349 +1,622 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>kenzo@whitehat:~$</title>
-    <link rel="icon" type="image/svg+xml" href="logo.svg">
-    <link rel="alternate icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="trusted-styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-</head>
-<body>
-    <div class="matrix-bg">
-        <canvas id="matrix"></canvas>
-    </div>
-   
-    
-    <!-- Web3 Hacks Ticker -->
-    <div class="ticker-container">
-        <div class="ticker-content" id="tickerContent">
-            <!-- Content will be populated dynamically via API -->
-        </div>
-    </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Web3 security portfolio — smart contract audits, exploit research, and protocol hardening."
+    />
+    <title>Kenzo - Portfolio</title>
+    <link
+      rel="icon"
+      type="image/jpeg"
+      href="https://pbs.twimg.com/profile_images/1966374857018597376/tKgLh5zJ_400x400.jpg"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="https://pbs.twimg.com/profile_images/1966374857018597376/tKgLh5zJ_400x400.jpg"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
 
-    <div class="welcome-banner">
-      <span class="welcome-main">Offensive Blockchain Security</span><br>
-      
-      <!-- Contact Button -->
-      <div class="contact-button-container">
-        <a href="https://twitter.com/messages/compose?recipient_id=kenzowhitehat" target="_blank" rel="noopener noreferrer" class="contact-audit-btn">
-          Contact for Private Review
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#" aria-label="Home">
+          <img
+            class="brand-avatar"
+            src="https://pbs.twimg.com/profile_images/1966374857018597376/tKgLh5zJ_400x400.jpg"
+            alt=""
+            loading="eager"
+            decoding="async"
+            referrerpolicy="no-referrer"
+          />
+          <span class="brand-label">
+            <span class="brand-text">Kenzo</span>
+            <span class="brand-sep" aria-hidden="true">|</span>
+            <span class="brand-role">Security Researcher</span>
+          </span>
         </a>
+
+        <nav class="nav" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#private-audits">Private audits</a>
+          <a href="#bug-bounty">Bug bounty</a>
+          <a href="#contests">Contests</a>
+          <a href="#public-works">Public works</a>
+          <a href="#writeups">Writeups</a>
+        </nav>
       </div>
-      
-      <div class="security-tracker">
-        <div class="tracker-line">
-          <span class="tracker-item critical">Critical: 4</span>
-          <span class="tracker-item high">High: 10</span>
-          <span class="tracker-item medium">Medium: 32</span>
+    </header>
+
+    <main id="content">
+      <section id="about" class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>About</h2>
+            <p>Smart Contract Reviews, Blockchain/DLT Security, Fuzzing, Formal Verification</p>
+          </div>
+
+          <div class="about-grid">
+            <figure class="profile">
+              <img
+                class="profile-photo"
+                src="https://pbs.twimg.com/profile_images/1966374857018597376/tKgLh5zJ_400x400.jpg"
+                alt="Kenzo"
+                loading="lazy"
+                decoding="async"
+                referrerpolicy="no-referrer"
+              />
+            </figure>
+
+            <div class="prose">
+              <h3 class="about-name">Kenzo</h3>
+              <p>
+                I’m a Web3 security researcher with 2+ years of experience in Smart contract auditing, Blockchain/DLT security, Stateful Fuzzing, Formal Verification and more. I have found bugs in major protocols like Injective, Zetachain,Beanstalk, Alchemix, Starknet etc. 
+              </p>
+              <p>
+                I also run <a href="https://shredsec.xyz/" target="_blank" rel="noopener noreferrer">Shred Security</a> as the co-founder where I work on auditing on complex defi protocols and blockchain DLT systems. I have also published open-source tools and resources for the community, including the Protocol Deployment Checklist, Incident Response Checklist, and HackViz.
+              </p>
+
+              <div class="stats-strip" aria-label="Totals">
+                <div class="stat">
+                  <div class="stat-label">Total TVL saved</div>
+                  <div class="stat-value mono">$2M+</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-label">Total H/M findings</div>
+                  <div class="stat-value mono">40+ H/M</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-label">Total public earning</div>
+                  <div class="stat-value mono">$17K</div>
+                </div>
+              </div>
+
+              <div class="profiles-container">
+                <div class="profiles-block" aria-label="Public profiles">
+                  <div class="profiles-title mono">Public profiles</div>
+                  <div class="logos" aria-label="Public profile logos">
+                    <a
+                      class="logo-link"
+                      href="https://cantina.xyz/u/tenma"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Cantina profile"
+                      title="Cantina profile"
+                    >
+                      <img
+                        class="logo-img"
+                        src="https://pbs.twimg.com/profile_images/1927362197451108352/rucusn-S_400x400.jpg"
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                        referrerpolicy="no-referrer"
+                      />
+                    </a>
+
+                    <a
+                      class="logo-link"
+                      href="https://immunefi.com/profile/kenzo/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Immunefi profile"
+                      title="Immunefi profile"
+                    >
+                      <img
+                        class="logo-img"
+                        src="https://immunefi.com/images/small-logo-white.svg"
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                        referrerpolicy="no-referrer"
+                      />
+                    </a>
+
+                    <a
+                      class="logo-link"
+                      href="https://x.com/kenzowhitehat"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="X: @kenzowhitehat"
+                      title="X: @kenzowhitehat"
+                    >
+                      <svg class="logo-svg" viewBox="0 0 24 24" role="img" focusable="false" aria-hidden="true">
+                        <path
+                          d="M4 4h3.2l5 6.6L17.7 4H20l-6.5 8.6L20.2 20H17l-5.3-7-5.2 7H4.2l6.6-8.8L4 4Z"
+                        />
+                      </svg>
+                    </a>
+
+                    <a
+                      class="logo-link"
+                      href="https://t.me/kenzowhitehat"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Telegram: @kenzowhitehat"
+                      title="Telegram: @kenzowhitehat"
+                    >
+                      <svg class="logo-svg" viewBox="0 0 24 24" role="img" focusable="false" aria-hidden="true">
+                        <path
+                          d="M21.5 4.5 2.8 11.8c-.8.3-.8 1.4.1 1.6l4.7 1.4 1.8 5.6c.2.8 1.3.9 1.7.2l2.7-4 5.2 3.9c.6.4 1.5.1 1.6-.7l2.7-16.2c.2-.9-.7-1.6-1.5-1.3Zm-5 4.2-7.2 6.6c-.2.2-.2.5 0 .7l.1.1-1.1 1.7-.9-2.8a.6.6 0 0 0-.4-.4l-2.7-.8 14.2-5.6Z"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="profiles-block" aria-label="Ecosystems">
+                  <div class="profiles-title mono">Ecosystems</div>
+                  <div class="logos" aria-label="Blockchain ecosystem logos">
+                    <div class="logo-link" aria-label="Ethereum" title="Ethereum">
+                      <img
+                        class="logo-img ecosystem-img"
+                        src="https://ethereum.org/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Feth-diamond-glyph.0_6a07loc_wvm.png&w=384&q=75"
+                        alt="Ethereum"
+                      />
+                    </div>
+
+                    <div class="logo-link" aria-label="Solana" title="Solana">
+                      <img
+                        class="logo-img"
+                        src="https://pbs.twimg.com/profile_images/2049882120039063552/Gav4-zee_400x400.jpg"
+                        alt="Solana"
+                      />
+                    </div>
+
+                    <div class="logo-link" aria-label="Cosmos" title="Cosmos">
+                      <img
+                        class="logo-img"
+                        src="https://pbs.twimg.com/profile_images/1983807442874929152/gO8dvfPE_400x400.png"
+                        alt="Cosmos"
+                      />
+                    </div>
+
+                    <div class="logo-link" aria-label="Polkatdot" title="Polkadot">
+                      <img
+                        class="logo-img"
+                        src="https://pbs.twimg.com/profile_images/2000932518304858116/uy8t5CnH_400x400.jpg"
+                        alt="Polkadot"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      <section id="private-audits" class="section section-muted">
+        <div class="container">
+          <div class="section-head">
+            <h2>Private audits</h2>
+            <p>Selected private engagements and reports.</p>
+          </div>
+
+          <div class="table-wrap" role="region" aria-label="Private audits table" tabindex="0">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th scope="col">Date</th>
+                  <th scope="col">Protocol</th>
+                  <th scope="col">Language</th>
+                  <th scope="col">Category</th>
+                  <th scope="col">Findings</th>
+                  <th scope="col">Report</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="mono">04/2026</td>
+                  <td>Ratehopper 2</td>
+                  <td>Solidity</td>
+                  <td>DeFi, Aggregator</td>
+                  <td>4M, 1L</td>
+                  <td>
+                    <a
+                      class="table-link"
+                      href="https://raw.githubusercontent.com/Shred-Security/audits/main/Ratehopper_2/Ratehopper2-Shred-Audit-03-2026.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Open report"
+                    >
+                      <svg class="ext-icon" viewBox="0 0 24 24" role="img" focusable="false" aria-hidden="true">
+                        <path d="M14 4h6v6h-2V7.4l-8.3 8.3-1.4-1.4L16.6 6H14V4Z" />
+                        <path d="M5 6h6v2H7v10h10v-4h2v6H5V6Z" />
+                      </svg>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="mono">01/2026</td>
+                  <td>Ratehopper</td>
+                  <td>Solidity</td>
+                  <td>DeFi, Aggregator</td>
+                  <td>3H, 4M, 6L</td>
+                  <td>
+                    <a
+                      class="table-link"
+                      href="https://raw.githubusercontent.com/Shred-Security/audits/main/Ratehopper/Ratehopper-Audit-Shred-01-2026.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Open report"
+                    >
+                      <svg class="ext-icon" viewBox="0 0 24 24" role="img" focusable="false" aria-hidden="true">
+                        <path d="M14 4h6v6h-2V7.4l-8.3 8.3-1.4-1.4L16.6 6H14V4Z" />
+                        <path d="M5 6h6v2H7v10h10v-4h2v6H5V6Z" />
+                      </svg>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="mono">11/2025</td>
+                  <td>Mustang Finance</td>
+                  <td>Solidity</td>
+                  <td>DeFi, CDP</td>
+                  <td>1H, 1M</td>
+                  <td>
+                    <a
+                      class="table-link"
+                      href="https://raw.githubusercontent.com/Shred-Security/audits/main/Mustang_Finance/Mustang-Audit-Shred-11-2025.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Open report"
+                    >
+                      <svg class="ext-icon" viewBox="0 0 24 24" role="img" focusable="false" aria-hidden="true">
+                        <path d="M14 4h6v6h-2V7.4l-8.3 8.3-1.4-1.4L16.6 6H14V4Z" />
+                        <path d="M5 6h6v2H7v10h10v-4h2v6H5V6Z" />
+                      </svg>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="mono">11/2025</td>
+                  <td>Probable</td>
+                  <td>Solidity</td>
+                  <td>Cross-chain, prediction markets</td>
+                  <td>2L (+Info)</td>
+                  <td>
+                    <a
+                      class="table-link"
+                      href="https://raw.githubusercontent.com/Shred-Security/audits/main/Probable/2025-11-Probable-Report.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Open report"
+                    >
+                      <svg class="ext-icon" viewBox="0 0 24 24" role="img" focusable="false" aria-hidden="true">
+                        <path
+                          d="M14 4h6v6h-2V7.4l-8.3 8.3-1.4-1.4L16.6 6H14V4Z"
+                        />
+                        <path
+                          d="M5 6h6v2H7v10h10v-4h2v6H5V6Z"
+                        />
+                      </svg>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="mono">09/2025</td>
+                  <td>StakeP2P</td>
+                  <td>Solidity</td>
+                  <td>Betting protocol</td>
+                  <td>1H, 1M, 1L</td>
+                  <td>
+                    <a
+                      class="table-link"
+                      href="https://raw.githubusercontent.com/Shred-Security/audits/main/StakeP2P/stakep2p-shredsecurity-29Sept.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Open report"
+                    >
+                      <svg class="ext-icon" viewBox="0 0 24 24" role="img" focusable="false" aria-hidden="true">
+                        <path
+                          d="M14 4h6v6h-2V7.4l-8.3 8.3-1.4-1.4L16.6 6H14V4Z"
+                        />
+                        <path
+                          d="M5 6h6v2H7v10h10v-4h2v6H5V6Z"
+                        />
+                      </svg>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-        <div class="tracker-line">
-          <span class="tracker-item value">Total Value Secured: 1 Million</span>
-          <span class="tracker-item earning">Total Public Earning: $20K</span>
+      </section>
+
+      <section id="bug-bounty" class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>Bug bounty</h2>
+            <p>Selected vulnerability disclosures (some private).</p>
+          </div>
+
+          <div class="table-wrap" role="region" aria-label="Bug bounty table" tabindex="0">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th scope="col">Date</th>
+                  <th scope="col">Program</th>
+                  <th scope="col">Language</th>
+                  <th scope="col">Category</th>
+                  <th scope="col">Severity</th>
+                  <th scope="col">Platform</th>
+                  <th scope="col">Write-up</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="mono">09/2025</td>
+                  <td>Injective</td>
+                  <td>Rust</td>
+                  <td>Blockchain/DLT</td>
+                  <td>Critical</td>
+                  <td>Immunefi</td>
+                  <td><span class="privacy-chip">Private</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section id="contests" class="section section-muted">
+        <div class="container">
+          <div class="section-head">
+            <h2>Contests</h2>
+            <p>Public audit contests and competitive reviews.</p>
+          </div>
+
+          <div class="table-wrap" role="region" aria-label="Contests table" tabindex="0">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th scope="col">Contest</th>
+                  <th scope="col">Language</th>
+                  <th scope="col">Platform</th>
+                  <th scope="col">Findings</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Superposition</td>
+                  <td>Rust</td>
+                  <td>C4</td>
+                  <td>2 High, 3 Medium</td>
+                </tr>
+                <tr>
+                  <td>Alchemix</td>
+                  <td>Rust</td>
+                  <td>Immunefi</td>
+                  <td>3 High, 1 Medium</td>
+                </tr>
+                <tr>
+                  <td>Starknet</td>
+                  <td>Cairo</td>
+                  <td>CodeHawks</td>
+                  <td>4 Medium</td>
+                </tr>
+                <tr>
+                  <td>Goat.Tech</td>
+                  <td>Solidity</td>
+                  <td>Cantina</td>
+                  <td>1 High, 2 Medium</td>
+                </tr>
+                <tr>
+                  <td>Belong</td>
+                  <td>Solidity</td>
+                  <td>Immunefi</td>
+                  <td>2 Medium, 1 Low</td>
+                </tr>
+                <tr>
+                  <td>BlackHole</td>
+                  <td>Solidity</td>
+                  <td>C4</td>
+                  <td>1 High, 1 Medium</td>
+                </tr>
+                <tr>
+                  <td>Zetachain</td>
+                  <td>Rust, Solana</td>
+                  <td>Cantina</td>
+                  <td>1 High, 1 Medium</td>
+                </tr>
+                <tr>
+                  <td>Puffer Finance</td>
+                  <td>Rust</td>
+                  <td>Immunefi</td>
+                  <td>1 Medium, 1 Low</td>
+                </tr>
+                <tr>
+                  <td>BeanStalk</td>
+                  <td>Solidity</td>
+                  <td>CodeHawks</td>
+                  <td>1 High</td>
+                </tr>
+                <tr>
+                  <td>Space and Time</td>
+                  <td>Rust</td>
+                  <td>Cantina</td>
+                  <td>1 Medium</td>
+                </tr>
+                <tr>
+                  <td>Ramses Exchange</td>
+                  <td>Solidity</td>
+                  <td>C4</td>
+                  <td>1 Medium</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section id="public-works" class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>Public works</h2>
+            <p>Tools and resources published publicly (hosted on a website).</p>
+          </div>
+
+          <div class="table-wrap" role="region" aria-label="Public works table" tabindex="0">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th scope="col">Tool / Resource</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Link</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Protocol Deployment Checklist</td>
+                  <td>
+                    A checklist defining baseline deployment-readiness requirements for smart
+                    contract protocols. (opensource)
+                  </td>
+                  <td>
+                    <a
+                      class="table-link"
+                      href="https://github.com/ShredSecurity/protocol-deployment-checklist"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Open website"
+                    >
+                      <svg class="ext-icon" viewBox="0 0 24 24" role="img" focusable="false" aria-hidden="true">
+                        <path
+                          d="M14 4h6v6h-2V7.4l-8.3 8.3-1.4-1.4L16.6 6H14V4Z"
+                        />
+                        <path
+                          d="M5 6h6v2H7v10h10v-4h2v6H5V6Z"
+                        />
+                      </svg>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Incident Response Checklist</td>
+                  <td>
+                    Production-grade baseline standard for Web3 incident response in the critical
+                    hours after an exploit. (opensource)
+                  </td>
+                  <td>
+                    <a
+                      class="table-link"
+                      href="https://github.com/Shred-Security/Incident-Response-Checklist"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Open website"
+                    >
+                      <svg class="ext-icon" viewBox="0 0 24 24" role="img" focusable="false" aria-hidden="true">
+                        <path d="M14 4h6v6h-2V7.4l-8.3 8.3-1.4-1.4L16.6 6H14V4Z" />
+                        <path d="M5 6h6v2H7v10h10v-4h2v6H5V6Z" />
+                      </svg>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>HackViz</td>
+                  <td>
+                    Simulate and learn exploits. Visualize drains, bridge hacks, flash loans,
+                    oracle manipulation, and governance attacks.
+                  </td>
+                  <td>
+                    <a
+                      class="table-link"
+                      href="http://hackviz.shredsec.xyz"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Open website"
+                    >
+                      <svg class="ext-icon" viewBox="0 0 24 24" role="img" focusable="false" aria-hidden="true">
+                        <path d="M14 4h6v6h-2V7.4l-8.3 8.3-1.4-1.4L16.6 6H14V4Z" />
+                        <path d="M5 6h6v2H7v10h10v-4h2v6H5V6Z" />
+                      </svg>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section id="writeups" class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>Writeups</h2>
+            <p>Public research notes and security deep dives.</p>
+          </div>
+
+          <div class="table-wrap" role="region" aria-label="Writeups table" tabindex="0">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th scope="col">Date</th>
+                  <th scope="col">Title</th>
+                  <th scope="col">Topic</th>
+                  <th scope="col">Link</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="mono">11/2025</td>
+                  <td>Cosmos Blockchain Security: A Comprehensive Technical Deep Dive</td>
+                  <td>Blockchain/DLT</td>
+                  <td>
+                    <a
+                      class="table-link"
+                      href="https://shredsec.xyz/blog-post?slug=cosmos-blockchain-security"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Open writeup"
+                    >
+                      <svg class="ext-icon" viewBox="0 0 24 24" role="img" focusable="false" aria-hidden="true">
+                        <path d="M14 4h6v6h-2V7.4l-8.3 8.3-1.4-1.4L16.6 6H14V4Z" />
+                        <path d="M5 6h6v2H7v10h10v-4h2v6H5V6Z" />
+                      </svg>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-left">
+          <div class="mono">Kenzo</div>
+          <div class="muted">Audits · Bug bounty · Contests · Public works</div>
+        </div>
+        <div class="footer-right">
+          <div class="muted">© 2025–2026 Kenzo. All rights reserved.</div>
         </div>
       </div>
-      <span class="welcome-sub">Type <b>help</b> to get started.</span>
-    </div>
-    
-    <div class="terminal-container">
-        <div class="terminal-header">
-            <div class="terminal-buttons">
-                <span class="btn close"></span>
-                <span class="btn minimize"></span>
-                <span class="btn maximize"></span>
-            </div>
-            <div class="terminal-title"></div>
-        </div>
-        
-        <div class="terminal-body">
-            <div class="terminal-output" id="terminalOutput">
-                <div class="output-line">
-                    <span class="prompt">kenzo@whitehat:~$</span>
-                    <span class="command">help</span>
-                </div>
-                <div class="output-line">
-                    <span class="output">Available commands:</span>
-                </div>
-                <div class="output-line">
-                    <span class="output">├── about - About me and my background</span>
-                </div>
-                <div class="output-line">
-                    <span class="output">├── experience - Work experience and timeline</span>
-                </div>
-                <div class="output-line">
-                    <span class="output">├── skills - Technical skills and certifications</span>
-                </div>
-                <div class="output-line">
-                    <span class="output">├── blog - Security articles and writeups</span>
-                </div>
-                <div class="output-line">
-                    <span class="output">├── contact - Get in touch</span>
-                </div>
-                <div class="output-line">
-                    <span class="output">├── clear - Clear terminal</span>
-                </div>
-                <div class="output-line">
-                    <span class="prompt">kenzo@whitehat:~$</span>
-                    <span class="command">ls -la</span>
-                </div>
-                <div class="output-line">
-                    <span class="output">total 8</span>
-                </div>
-                <div class="output-line">
-                    <span class="output">drwxr-xr-x  2 kenzo kenzo 4096 Dec 15 10:30 .</span>
-                </div>
-                <div class="output-line">
-                    <span class="output">drwxr-xr-x  3 kenzo kenzo 4096 Dec 15 10:30 ..</span>
-                </div>
-                <div class="output-line">
-                    <span class="output">-rw-r--r--  1 kenzo kenzo  256 Dec 15 10:30 about.txt</span>
-                </div>
-                <div class="output-line">
-                    <span class="output">-rw-r--r--  1 kenzo kenzo  512 Dec 15 10:30 experience.txt</span>
-                </div>
-                <div class="output-line">
-                    <span class="output">-rw-r--r--  1 kenzo kenzo  384 Dec 15 10:30 projects.txt</span>
-                </div>
-                <div class="output-line">
-                    <span class="output">-rw-r--r--  1 kenzo kenzo  128 Dec 15 10:30 contact.txt</span>
-                </div>
-            </div>
-            
-            <div class="terminal-input-line">
-                <span class="prompt">kenzo@whitehat:~$</span>
-                <input type="text" id="terminalInput" class="terminal-input" placeholder="Enter command..." autocomplete="off">
-            </div>
-        </div>
-    </div>
-
-    <!-- Trust by section build it when needed
-    <div class="trusted-by-section">
-        <h3 class="trusted-by-title">TRUSTED BY</h3>
-        
-       
-        <div class="trusted-by-container">
-            <div class="trusted-company">
-                <div class="company-logo">🔗</div>
-                <span class="company-name">Chainlink</span>
-            </div>
-            <div class="trusted-company">
-                <div class="company-logo">🌀</div>
-                <span class="company-name">Curve</span>
-            </div>
-            <div class="trusted-company">
-                <div class="company-logo">🔥</div>
-                <span class="company-name">Balancer</span>
-            </div>
-            <div class="trusted-company">
-                <div class="company-logo">🚀</div>
-                <span class="company-name">Yearn</span>
-            </div>
-            <div class="trusted-company">
-                <div class="company-logo">💎</div>
-                <span class="company-name">SushiSwap</span>
-            </div>
-        </div>
-        
-        <div class="trusted-by-container">
-            <div class="trusted-company">
-                <div class="company-logo">🏦</div>
-                <span class="company-name">Aave</span>
-            </div>
-            <div class="trusted-company">
-                <div class="company-logo">🦄</div>
-                <span class="company-name">Uniswap</span>
-            </div>
-            <div class="trusted-company">
-                <div class="company-logo">💉</div>
-                <span class="company-name">Injective</span>
-            </div>
-            <div class="trusted-company">
-                <div class="company-logo">🌊</div>
-                <span class="company-name">Compound</span>
-            </div>
-            <div class="trusted-company">
-                <div class="company-logo">⚖️</div>
-                <span class="company-name">MakerDAO</span>
-            </div>
-        </div>
-    </div>
-
-    --->
-
-    <!-- Content Sections (Hidden by default) -->
-    <div class="content-sections">
-        <!-- About Section -->
-        <div id="about-content" class="content-section">
-            <div class="section-header">
-                <h2>about.txt</h2>
-                <span class="close-section" onclick="closeSection('about-content')">×</span>
-            </div>
-            <div class="section-content">
-                <div class="profile-info">
-                    <div class="profile-details">
-                        <h3>Kenzo</h3>
-                        <p class="title">Blockchain Offensive Security Researcher</p>
-                    </div>
-                </div>
-                <div class="about-text">
-                    <h4>Background</h4>
-                    <p>I'm a passionate blockchain security researcher with over 2 years of experience in offensive security and smart contract auditing. I've evolved to specialize in blockchain security as the technology has grown.</p>
-                    <div></div>
-                    <h4>Expertise</h4>
-                    <ul>
-                        <li>Smart Contract Security Auditing (Solidity, Rust, Go)</li>
-                        <li>DeFi Protocol Vulnerability Assessment</li>
-                        <li>L1 and L2 security</li>
-                        <li>Cross-Chain Bridge Security Analysis</li>
-                    </ul>
-                    <br></br>
-                    <h4>Philosophy</h4>
-                    <p>My goal is to make blockchain technology more secure through research, education, and collaboration.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Experience Section -->
-        <div id="experience-content" class="content-section">
-            <div class="section-header">
-                <h2>experience.txt</h2>
-                <span class="close-section" onclick="closeSection('experience-content')">×</span>
-            </div>
-            <div class="section-content">
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-date">2023 - Present</div>
-                        <div class="timeline-content">
-                            <h3>Blockchain Security Researcher (Freelance)</h3>
-                            <h4>Immunefi, Cantina, Sherlock</h4>
-                            <ul>
-                                <li>Security researcher conducting comprehensive audits of DeFi protocols</li>
-                                <li>Identified critical vulnerabilities in major protocols</li>
-                                <li>Completed 20+ smart contract contests</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Skills Section -->
-        <div id="skills-content" class="content-section">
-            <div class="section-header">
-                <h2>skills.txt</h2>
-                <span class="close-section" onclick="closeSection('skills-content')">×</span>
-            </div>
-            <div class="section-content">
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Blockchain Security</h3>
-                        <div class="skill-items">
-                            <span class="skill-item">Smart Contract Auditing</span>
-                            <span class="skill-item">DeFi Protocol Analysis</span>
-                            <span class="skill-item">L1 and L2 Security</span>
-                            <span class="skill-item">Cross-Chain Bridge Security</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Programming Languages</h3>
-                        <div class="skill-items">
-                            <span class="skill-item">Solidity</span>
-                            <span class="skill-item">Rust</span>
-                            <span class="skill-item">Go</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Security Tools</h3>
-                        <div class="skill-items">
-                            <span class="skill-item">Foundry</span>
-                            <span class="skill-item">Certora FV</span>
-                            <span class="skill-item">Hardhat</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Technologies</h3>
-                        <div class="skill-items">
-                            <span class="skill-item">Ethereum</span>
-                            <span class="skill-item">Solana</span>
-                            <span class="skill-item">Substrate</span>
-                            <span class="skill-item">Sui/Aptos</span>
-                            <span class="skill-item">Bridges</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        
-        <!-- Blog Section -->
-        <div id="blog-content" class="content-section">
-            <div class="section-header">
-                <h2>blog.txt</h2>
-                <span class="close-section" onclick="closeSection('blog-content')">×</span>
-            </div>
-            <div class="section-content">
-                <!-- Blog content will be dynamically loaded here -->
-            </div>
-        </div>
-
-        <!-- Contact Section -->
-        <div id="contact-content" class="content-section">
-            <div class="section-header">
-                <h2>contact.txt</h2>
-                <span class="close-section" onclick="closeSection('contact-content')">×</span>
-            </div>
-            <div class="section-content">
-                <div class="contact-info">
-                    <h3>Get in Touch</h3>
-                    <p>I'm always interested in new opportunities, collaborations, or just discussing blockchain security.</p>
-                    
-                    <div class="contact-methods">
-                        <div class="contact-method">
-                            <i class="fas fa-envelope"></i>
-                            <span>businesswithtenma@gmail.com</span>
-                        </div>
-                        <div class="contact-method">
-                            <i class="fab fa-twitter"></i>
-                            <span>Twitter</span>
-                        </div>
-                        <div class="contact-method">
-                            <i class="fab fa-github"></i>
-                            <span>Github</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Social Handles -->
-    <div class="site-footer">
-      <div class="social-handles">
-        <a href="https://twitter.com/kenzowhitehat" target="_blank" rel="noopener noreferrer" class="social-link">
-          <!-- Twitter SVG -->
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;margin-right:8px;" xmlns="http://www.w3.org/2000/svg">
-            <path d="M22.46 5.924c-.793.352-1.645.59-2.54.698a4.48 4.48 0 0 0 1.965-2.475 8.94 8.94 0 0 1-2.828 1.082A4.48 4.48 0 0 0 16.11 4c-2.48 0-4.49 2.014-4.49 4.496 0 .352.04.695.116 1.022C7.728 9.37 4.1 7.555 1.67 4.905c-.386.664-.607 1.437-.607 2.26 0 1.56.793 2.936 2.003 3.744a4.48 4.48 0 0 1-2.034-.563v.057c0 2.18 1.55 4.002 3.604 4.417-.377.104-.775.16-1.186.16-.29 0-.568-.028-.84-.08.57 1.77 2.22 3.06 4.18 3.09A8.98 8.98 0 0 1 2 19.54a12.67 12.67 0 0 0 6.88 2.017c8.26 0 12.78-6.84 12.78-12.77 0-.195-.004-.39-.013-.583A9.1 9.1 0 0 0 24 4.59a8.98 8.98 0 0 1-2.54.697z" fill="#00ff00"/>
-          </svg>
-          @kenzowhitehat
-        </a>
-        &nbsp;&nbsp;
-        <a href="https://github.com/tenma7788" target="_blank" rel="noopener noreferrer" class="social-link">
-          <!-- GitHub SVG -->
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;margin-right:8px;" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2C6.477 2 2 6.484 2 12.021c0 4.428 2.865 8.184 6.839 9.504.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.987 1.029-2.687-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.546 1.378.202 2.397.1 2.65.64.7 1.028 1.594 1.028 2.687 0 3.847-2.338 4.695-4.566 4.944.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.749 0 .267.18.577.688.48C19.138 20.2 22 16.447 22 12.021 22 6.484 17.523 2 12 2z" fill="#00ff00"/>
-          </svg>
-          Github
-        </a>
-      </div>
-      © 2025 Kenzo. All rights reserved.
-    </div>
-
-    <script src="script.js"></script>
-</body>
-</html> 
+    </footer>
+  </body>
+</html>
