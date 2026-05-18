@@ -40,7 +40,7 @@
           </span>
         </a>
 
-        <nav class="nav" aria-label="Primary">
+        <nav class="nav" aria-label="Primary" id="primary-nav">
           <a href="#about">About</a>
           <a href="#private-audits">Private audits</a>
           <a href="#bug-bounty">Bug bounty</a>
@@ -48,6 +48,20 @@
           <a href="#public-works">Public works</a>
           <a href="#writeups">Writeups</a>
         </nav>
+
+        <button
+          class="mobile-menu-btn"
+          id="mobile-menu-btn"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
       </div>
     </header>
 
@@ -618,5 +632,103 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      (function() {
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const nav = document.getElementById('primary-nav');
+        const navLinks = nav.querySelectorAll('a');
+
+        menuBtn.addEventListener('click', function() {
+          const isExpanded = nav.classList.contains('active');
+          nav.classList.toggle('active');
+          menuBtn.setAttribute('aria-expanded', !isExpanded);
+        });
+
+        navLinks.forEach(function(link) {
+          link.addEventListener('click', function() {
+            nav.classList.remove('active');
+            menuBtn.setAttribute('aria-expanded', 'false');
+          });
+        });
+
+        document.addEventListener('click', function(e) {
+          if (!menuBtn.contains(e.target) && !nav.contains(e.target)) {
+            nav.classList.remove('active');
+            menuBtn.setAttribute('aria-expanded', 'false');
+          }
+        });
+      })();
+
+      (function() {
+        function transformTablesToCards() {
+          const tableWraps = document.querySelectorAll('.table-wrap');
+          const isMobile = window.innerWidth <= 640;
+
+          tableWraps.forEach(function(wrap) {
+            const table = wrap.querySelector('.data-table');
+            if (!table) return;
+
+            let cardsContainer = wrap.querySelector('.mobile-table-cards');
+
+            if (isMobile) {
+              if (!cardsContainer) {
+                cardsContainer = document.createElement('div');
+                cardsContainer.className = 'mobile-table-cards';
+                wrap.appendChild(cardsContainer);
+              }
+
+              if (cardsContainer.children.length === 0) {
+                const headers = Array.from(table.querySelectorAll('thead th')).map(function(th) {
+                  return th.textContent.trim();
+                });
+                const rows = table.querySelectorAll('tbody tr');
+
+                rows.forEach(function(row) {
+                  const cells = row.querySelectorAll('td');
+                  const card = document.createElement('div');
+                  card.className = 'table-card';
+
+                  cells.forEach(function(cell, index) {
+                    const cardRow = document.createElement('div');
+                    cardRow.className = 'table-card-row';
+
+                    const label = document.createElement('span');
+                    label.className = 'table-card-label';
+                    label.textContent = headers[index] || '';
+
+                    const value = document.createElement('span');
+                    value.className = 'table-card-value';
+                    value.innerHTML = cell.innerHTML;
+
+                    cardRow.appendChild(label);
+                    cardRow.appendChild(value);
+                    card.appendChild(cardRow);
+                  });
+
+                  cardsContainer.appendChild(card);
+                });
+              }
+
+              table.style.display = 'none';
+              cardsContainer.style.display = 'block';
+            } else {
+              table.style.display = '';
+              if (cardsContainer) {
+                cardsContainer.style.display = 'none';
+              }
+            }
+          });
+        }
+
+        transformTablesToCards();
+
+        let resizeTimeout;
+        window.addEventListener('resize', function() {
+          clearTimeout(resizeTimeout);
+          resizeTimeout = setTimeout(transformTablesToCards, 150);
+        });
+      })();
+    </script>
   </body>
 </html>
